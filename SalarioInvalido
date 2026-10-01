@@ -1,0 +1,12 @@
+// classe Exceção : salario menor que zero;
+
+public class SalarioInvalido extends RuntimeException {
+    public SalarioInvalido(String mensagem) {
+        super(mensagem);
+    }
+
+    public SalarioInvalido(String mensagem, Throwable causa) {
+        super(mensagem, causa);
+    }
+}
+ 
