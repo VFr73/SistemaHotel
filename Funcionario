@@ -1,0 +1,44 @@
+public abstract class Funcionario{
+    private String nome;
+    private String cpf;
+    private double salario;
+
+    public Funcionario(String nome, String cpf, double salario) {
+        setNome(nome);
+        setCpf(cpf);
+        this.salario = salario;
+    }
+
+    public abstract boolean baterPonto();
+    
+    
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        if(nome.trim().isEmpty() || nome == null) {
+            throw new IllegalArgumentException("Nome não pode estar vazio");
+        }
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+    public void setCpf(String cpf) {
+        if(nome.trim().isEmpty() || cpf == null) {
+            throw new IllegalArgumentException("Nome não pode estar vazio");
+        }
+        this.cpf = cpf;
+    }
+    
+    public double getSalario() {
+        return salario;
+    }
+    public void setSalario(double salario) {
+        if(salario < 0) {
+            throw new SalarioInvalido("Nome não pode estar vazio");
+        }
+        this.salario = salario;
+    }
+}
