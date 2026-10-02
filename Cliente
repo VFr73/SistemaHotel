@@ -1,18 +1,49 @@
-public class Cliente {
-    private String nome;
-    private int idade;
+import java.util.Stack;
+
+public class Cliente extends Pessoa {
+    private String telefone;
+    private String email;
+    private Stack<String> historico;
+    private boolean isVip;
+
+    public Cliente(String nome, String cpf, String telefone, String email, boolean isVip){
+        super(nome, cpf);
+        this.telefone = telefone;
+        this.email = email;
+        this.isVip = isVip;
+        this.historico = new Stack<>();
+    }
     
-    public Cliente(String nome, int idade) {
-        this.nome = nome;
-        this.idade = idade;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public String getNome() {
-        return nome;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
-    } 
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Stack<String> getHistorico() {
+        return historico;
+    }
+
+    public void setHistorico(Stack<String> historico) {
+        this.historico = historico;
+    }
+
+    public boolean isVip() {
+        return isVip;
+    }
+
+    public void setVip(boolean isVip) {
+        this.isVip = isVip;
+    }
     
 }
