@@ -1,0 +1,33 @@
+public class Gerente extends Funcionario {
+    private String senhaAdm;
+    private double bonusFaturamento;
+
+    public Gerente(String nome, String cpf,double salario, String matricula, String senhaAdm, double bonusFaturamento) {
+        super(nome,cpf, salario, matricula);
+        setSenhaAdm(senhaAdm);
+        setBonusFaturamento(bonusFaturamento);
+    }
+
+
+    // tratar exceções.
+    public String getSenhaAdm() {
+        return senhaAdm;
+    }
+
+    public void setSenhaAdm(String senhaAdm) {
+        this.senhaAdm = senhaAdm;
+    }
+
+    public double getBonusFaturamento() {
+        return bonusFaturamento;
+    }
+
+    public void setBonusFaturamento(double bonusFaturamento) {
+        this.bonusFaturamento = bonusFaturamento;
+    }
+
+    @Override
+    public  void trabalhar(){
+        System.out.println(this.nome+ "verificando trabalho dos funcionarios");
+    }
+}
