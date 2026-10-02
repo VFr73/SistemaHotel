@@ -1,0 +1,15 @@
+public class Recepcionista extends Funcionario {
+    private String[] idiomasFalados;
+    private String turno;
+
+    public Recepcionista(String nome, String cpf, double salario, String matricula,String[] idiomasFalados, String turno) {
+        super(nome, cpf, salario, matricula);
+        this.idiomasFalados = idiomasFalados;
+        this.turno = turno;
+    }
+    @Override 
+    public void trabalhar() {
+        System.out.println(this.nome+"Está entrando no turno da: "+ this.turno);
+    }
+
+}
