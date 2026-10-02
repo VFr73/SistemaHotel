@@ -1,44 +1,32 @@
-public abstract class Funcionario{
-    private String nome;
-    private String cpf;
+public abstract class Funcionario extends Pessoa {
     private double salario;
+    private String matricula;
 
-    public Funcionario(String nome, String cpf, double salario) {
-        setNome(nome);
-        setCpf(cpf);
-        this.salario = salario;
+     public Funcionario(String nome, String cpf, double salario, String matricula) {
+        super(nome, cpf);
+        setSalario(salario);
+        setMatricula(matricula);
     }
-
-    public abstract boolean baterPonto();
-    
-    
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        if(nome.trim().isEmpty() || nome == null) {
-            throw new IllegalArgumentException("Nome não pode estar vazio");
-        }
-        this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-    public void setCpf(String cpf) {
-        if(nome.trim().isEmpty() || cpf == null) {
-            throw new IllegalArgumentException("Nome não pode estar vazio");
-        }
-        this.cpf = cpf;
-    }
+    abstract void trabalhar();
     
     public double getSalario() {
         return salario;
     }
     public void setSalario(double salario) {
         if(salario < 0) {
-            throw new SalarioInvalido("Nome não pode estar vazio");
+            throw new SalarioInvalidoException("Salário tem que ser maior que zero");
         }
         this.salario = salario;
     }
+
+    public String getMatricula() {
+        return matricula;
+    }
+    public void setMatricula(String matricula) {
+        if(matricula == null || matricula.trim().isEmpty()) {
+            throw new IllegalArgumentException("Matricula não pode estar vazio");
+        }
+        this.matricula = matricula;
+    }
+    
 }
